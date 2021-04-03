@@ -1,0 +1,49 @@
+{
+  "sdk": 3,
+  "version": 1,
+  "TPGeForceExperience_Version": "1.0.0",
+  "name": "Touch Portal GeForce Experience Plugin",
+  "id": "TPGeForceExperience",
+  "plugin_start_cmd": "\"%TP_PLUGIN_FOLDER%TPGeForceExperience\\tpgfe.exe\"",
+  "categories": [
+    {
+      "id": "TPGeForceExperience",
+      "name": "GeForceExperience",
+      "imagepath": "%TP_PLUGIN_FOLDER%TPGeForceExperience/GeForceExperience-Logo.png",
+      "actions": [],
+      "states": [
+        {
+          "id": "gfe_record",
+          "type": "choice",
+          "desc": "GeForce Experience Record",
+          "default": "Off",
+          "valueChoices": [
+            "Off",
+            "On"
+          ]
+        },
+        {
+          "id": "gfe_instant_replay",
+          "type": "choice",
+          "desc": "GeForce Experience Instant Replay",
+          "default": "Off",
+          "valueChoices": [
+            "Off",
+            "On"
+          ]
+        },
+        {
+          "id": "gfe_broadcast",
+          "type": "choice",
+          "desc": "GeForceExperience Broadcast",
+          "default": "Off",
+          "valueChoices": [
+            "Off",
+            "On"
+          ]
+        }
+      ],
+      "events": []
+    }
+  ]
+}

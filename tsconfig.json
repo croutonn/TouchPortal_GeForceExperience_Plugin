@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "es2015",
+    "module": "commonjs",
+    "lib": ["es2015"],
+    "outDir": "dest",
+    "rootDir": "src",
+    "pretty": true,
+    "removeComments": true,
+    "importHelpers": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "traceResolution": false,
+    "listEmittedFiles": false,
+    "listFiles": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules/**"],
+  "compileOnSave": false
+}
