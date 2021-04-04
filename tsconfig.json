@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "target": "es2015",
+    "target": "es6",
     "module": "commonjs",
-    "lib": ["es2015"],
+    "lib": ["es5", "es6"],
     "outDir": "dest",
     "rootDir": "src",
     "pretty": true,
@@ -12,16 +12,13 @@
     "strict": true,
     "moduleResolution": "node",
     "traceResolution": false,
-    "listEmittedFiles": false,
-    "listFiles": false,
+    "listEmittedFiles": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
     "types": ["node"]
   },
   "include": ["src/**/*.ts"],
