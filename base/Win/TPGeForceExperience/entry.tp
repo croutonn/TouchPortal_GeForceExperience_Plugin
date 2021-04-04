@@ -10,12 +10,200 @@
       "id": "TPGeForceExperience",
       "name": "GeForceExperience",
       "imagepath": "%TP_PLUGIN_FOLDER%TPGeForceExperience/GeForceExperience-Logo.png",
-      "actions": [],
+      "actions": [
+        {
+          "id": "gfe_capture_screenshot_action",
+          "prefix": "GeForceExperience:",
+          "name": "Capture Screenshot",
+          "type": "communicate"
+        },
+        {
+          "id": "gfe_save_instant_replay_action",
+          "prefix": "GeForceExperience:",
+          "name": "Save InstantReplay",
+          "type": "communicate"
+        },
+        {
+          "id": "gfe_overlay_action",
+          "prefix": "GeForceExperience:",
+          "name": "Open/Close Overlay",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "GeForceExperience: Set Overlay {$gfeOverlayAction$}",
+          "data": [
+            {
+              "id": "gfeOverlayAction",
+              "type": "choice",
+              "label": "Overlay Action",
+              "default": "",
+              "valueChoices": [
+                "Off",
+                "On",
+                "Toggle"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gfe_record_action",
+          "prefix": "GeForceExperience:",
+          "name": "Start/Stop Record",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "GeForceExperience: Set Record {$gfeRecordAction$}",
+          "data": [
+            {
+              "id": "gfeRecordAction",
+              "type": "choice",
+              "label": "Record Action",
+              "default": "",
+              "valueChoices": [
+                "Off",
+                "On",
+                "Toggle"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gfe_instant_replay_action",
+          "prefix": "GeForceExperience:",
+          "name": "Start/Stop InstantReplay",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "GeForceExperience: Set InstantReplay {$gfeInstantReplayAction$}",
+          "data": [
+            {
+              "id": "gfeInstantReplayAction",
+              "type": "choice",
+              "label": "InstantReplay Action",
+              "default": "",
+              "valueChoices": [
+                "Off",
+                "On",
+                "Toggle"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gfe_broadcast_action",
+          "prefix": "GeForceExperience:",
+          "name": "Start/Stop Broadcast",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "GeForceExperience: Set Broadcast {$gfeBroadcastAction$}",
+          "data": [
+            {
+              "id": "gfeBroadcastAction",
+              "type": "choice",
+              "label": "Broadcast Action",
+              "default": "",
+              "valueChoices": [
+                "Off",
+                "On",
+                "Toggle"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gfe_pause_broadcast_action",
+          "prefix": "GeForceExperience:",
+          "name": "Play/Pause Broadcast",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "GeForceExperience: Set PauseBroadcast {$gfePauseBroadcastAction$}",
+          "data": [
+            {
+              "id": "gfePauseBroadcastAction",
+              "type": "choice",
+              "label": "PauseBroadcast Action",
+              "default": "",
+              "valueChoices": [
+                "Off",
+                "On",
+                "Toggle"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gfe_webcam_action",
+          "prefix": "GeForceExperience:",
+          "name": "Turn On/Off Webcam",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "GeForceExperience: Set Webcam {$gfeWebcamAction$}",
+          "data": [
+            {
+              "id": "gfeWebcamAction",
+              "type": "choice",
+              "label": "Webcam Action",
+              "default": "",
+              "valueChoices": [
+                "Off",
+                "On",
+                "Toggle"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gfe_shown_webcam_action",
+          "prefix": "GeForceExperience:",
+          "name": "Show Webcam to Overlay",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "GeForceExperience: Set ShownWebcam {$gfeShownWebcamAction$}",
+          "data": [
+            {
+              "id": "gfeShownWebcamAction",
+              "type": "choice",
+              "label": "ShownWebcam Action",
+              "default": "",
+              "valueChoices": [
+                "Off",
+                "On",
+                "Toggle"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gfe_microphone_action",
+          "prefix": "GeForceExperience:",
+          "name": "Set Microphone Mode",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "GeForceExperience: Set Microphone {$gfeMicrophoneAction$}",
+          "data": [
+            {
+              "id": "gfeMicrophoneAction",
+              "type": "choice",
+              "label": "Microphone Action",
+              "default": "",
+              "valueChoices": [
+                "Off",
+                "AllwaysOn",
+                "PTT"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gfe_microphone_ptt_action",
+          "prefix": "GeForceExperience:",
+          "name": "Push-To-Talk",
+          "type": "communicate",
+          "hasHoldFunctionality": true
+        }
+      ],
       "states": [
         {
           "id": "gfe_record",
           "type": "choice",
-          "desc": "GeForce Experience Record",
+          "desc": "GeForceExperience Record",
           "default": "Off",
           "valueChoices": [
             "Off",
@@ -25,7 +213,7 @@
         {
           "id": "gfe_instant_replay",
           "type": "choice",
-          "desc": "GeForce Experience Instant Replay",
+          "desc": "GeForceExperience Instant Replay",
           "default": "Off",
           "valueChoices": [
             "Off",
@@ -36,6 +224,66 @@
           "id": "gfe_broadcast",
           "type": "choice",
           "desc": "GeForceExperience Broadcast",
+          "default": "Off",
+          "valueChoices": [
+            "Off",
+            "On"
+          ]
+        },
+        {
+          "id": "gfe_pause_broadcast",
+          "type": "choice",
+          "desc": "GeForceExperience PauseBroadcast",
+          "default": "Off",
+          "valueChoices": [
+            "Off",
+            "On"
+          ]
+        },
+        {
+          "id": "microphone",
+          "type": "choice",
+          "desc": "GeForceExperience Microphone",
+          "default": "Off",
+          "valueChoices": [
+            "Off",
+            "On"
+          ]
+        },
+        {
+          "id": "microphone_ptt",
+          "type": "choice",
+          "desc": "GeForceExperience Microphone Push-To-Talk",
+          "default": "Off",
+          "valueChoices": [
+            "Off",
+            "On"
+          ]
+        },
+        {
+          "id": "webcam",
+          "type": "choice",
+          "desc": "GeForceExperience Webcam",
+          "default": "Off",
+          "valueChoices": [
+            "Off",
+            "On"
+          ]
+        },
+        {
+          "id": "shown_webcam",
+          "type": "choice",
+          "desc": "GeForceExperience ShownWebcam",
+          "default": "Off",
+          "valueChoices": [
+            "Off",
+            "On"
+          ]
+        },
+        {
+          "id": "overlay",
+          "type": "choice",
+          "desc": "GeForceExperience Overlay",
           "default": "Off",
           "valueChoices": [
             "Off",
